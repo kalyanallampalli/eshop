@@ -1,0 +1,64 @@
+@font-face{
+    font-family: myriadProBoldCond;
+    src: asset-url('MyriadPro-BoldCond.otf', font) format("opentype");
+}
+
+@font-face{
+    font-family: myriadProReg;
+    font-weight:normal;
+    src: asset-url('myriadpro-regular-webfont.eot', font) format('eot'),
+    asset-url('myriadpro-regular-webfont.svg', font) format('svg'),
+    asset-url('MyriadPro-Regular.otf', font) format("opentype"),
+    asset-url('MyriadPro-Regular.woff', font) format('woff'), 
+    asset-url('myriad-web-pro-regular.ttf', font) format('truetype');
+}
+
+@font-face{
+    font-family: myriadProSemiBold;
+    src: asset-url('MyriadPro-Semibold.otf', font) format("opentype"), asset-url('myriadpro-semibold.ttf', font) format('truetype');
+}
+
+@font-face{
+    font-family: myriadProSemiBoldIt;
+    src: asset-url('MyriadPro-SemiboldIt.otf', font) format("opentype"), asset-url('myriadpro-semiboldit.ttf', font) format('truetype');
+}
+
+@font-face{
+  font-family: MyriadProBold;
+  font-weight:normal;
+  src: asset-url('MyriadPro-Bold.otf', font) format("opentype"), asset-url('MyriadWebPro-Bold.ttf', font) format('truetype');
+}
+
+body {
+  font-family: myriadProReg;
+
+  h1, h2, h3, h4, h5 {
+    font-family: MyriadProBold;
+    font-weight: normal;
+  }
+
+  form {
+    label.error {
+      font-size: 12px;
+      line-height: 22px;
+      margin: -5px auto 14px;
+    }
+  }
+  
+  button, .button {
+    &.primary {
+      color: #be617e;
+      text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+      letter-spacing: -1px;
+      font-weight: 600;
+      border-radius: 3px;
+    }
+    &.secondary {
+      color: #139789;
+      text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+      letter-spacing: -1px;
+      font-weight: 600;
+      border-radius: 3px;
+    }
+  }
+}
