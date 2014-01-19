@@ -8,6 +8,10 @@ gem 'rails', '3.2.13'
 gem 'pg','0.14.1'
 gem 'thin'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
