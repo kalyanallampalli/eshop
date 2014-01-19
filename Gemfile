@@ -26,3 +26,4 @@ end
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem "angularjs-rails", "~> 1.2.9"
