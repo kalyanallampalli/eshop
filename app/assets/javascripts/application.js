@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require angular-route
+//= require eshop
+//= require controllers
 //= require_tree .
