@@ -7,4 +7,9 @@ class ProductsController < ApplicationController
     respond_with products
   end
   
+  def show
+    product = Product.find(params[:id])
+    respond_with product    
+  end
+  
 end

@@ -4,6 +4,6 @@
       = render 'shared/siderbar'
     .col-md-9{'ng-controller' => 'ProductListCtrl'}
       = render 'shared/carousel'
-      .row
+      .row{'ng-view' => ''}
         = render 'shared/product'
     

@@ -7,15 +7,15 @@ eShop.config(['$routeProvider',
 	function($routeProvider){
 		$routeProvider.
 		when('/products', {
-			templateUrl: '/assets/product-list.html',
+			templateUrl: '/assets/products/product-list.html',
 			controller: 'ProductListCtrl'
 		})
 		.when('/products/:productId', {
-			templateUrl: '/assets/detail-product.html',
+			templateUrl: '/assets/products/detail-product.html',
 			controller: 'ProductDetailCtrl'
 		}).
 		when('/', {
-			templateUrl: '/assets/product-list.html',
+			templateUrl: '/assets/products/product-list.html',
 			controller: 'ProductListCtrl'	
 		}).
 		otherwise({

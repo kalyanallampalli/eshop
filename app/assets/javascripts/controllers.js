@@ -4,8 +4,11 @@ productControllers.controller('ProductListCtrl', ['$scope', '$http', function($s
 	$http.get('/products.json').success(function(data){
 		$scope.products = data;
 	});
-}])
+}]);
 
-productControllers.controller('ProductDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
-	$scope.productId = $routeParams.productId
+productControllers.controller('ProductDetailCtrl', 
+	['$scope', '$routeParams', '$http', function($scope, $routeParams, $http){
+	$http.get('/products/'+$routeParams.productId+'.json').success(function(data){
+		$scope.phone = data;
+	});	
 }]);
