@@ -1,7 +1,13 @@
 Eshop::Application.routes.draw do
   
+  get "pages/about"
+
   root to: 'home#index'
   resources :products
+  
+  match 'about' => 'pages#about'
+  match 'services' => 'pages#services'
+  match 'contact' => 'pages#contact'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

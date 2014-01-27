@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   
   def show
     product = Product.find(params[:id])
-    respond_with product    
+    respond_with product, layout: 'product'
   end
   
 end

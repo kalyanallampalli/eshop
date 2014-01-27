@@ -17,9 +17,9 @@ eShop.config(['$routeProvider',
 		when('/', {
 			templateUrl: '/assets/products/product-list.html',
 			controller: 'ProductListCtrl'	
-		}).
+		}).		
 		otherwise({
-			redirectTo: '/'
+			//redirectTo: '/'
 		});
 	}
 ]);

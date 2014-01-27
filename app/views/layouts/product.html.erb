@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='eShop'>
 	<head>
-		<title>E-Shop</title>
+		<title>E-Buy</title>
 		<%= stylesheet_link_tag    "application", :media => "all" %>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
@@ -9,14 +9,9 @@
 	<body>
 		<%= render 'shared/header' %>
 		<div class="container">
-			 <div class="row">
-			 	<div class="col-md-3">
-			 		<%= render 'shared/siderbar' %>
-			 	</div>
-			 	<div class="col-md-9" ng-view>
-			 		<%= yield %>	
-			 	</div>
-			</div>
-		</div>
+		  <div class="row" ng-view>
+		    <%= yield %>
+		  </div>		  
+		</div>				
 	</body>
 </html>
