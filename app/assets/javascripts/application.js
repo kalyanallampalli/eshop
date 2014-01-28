@@ -15,5 +15,7 @@
 //= require angular
 //= require angular-route
 //= require eshop
+//= require services
+//= require angular-resource
 //= require controllers
 //= require_tree .

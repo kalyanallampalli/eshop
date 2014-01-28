@@ -1,3 +1,5 @@
-%h3 Shop Online
+%h3.lead Shop Online
 .list-group
   %input.form-control{'ng-model' => 'query', placeholder: 'Search Products'}
+.list-group  
+  = link_to 'Add Product', '/#/products/new', class:'list-group-item'

@@ -1,20 +1,26 @@
 var productControllers = angular.module('productControllers', []);
-var pageController = angular.module('pageController', []);
 
-
-productControllers.controller('ProductListCtrl', ['$scope', '$http', function($scope, $http){
-	$http.get('/products.json').success(function(data){
+productControllers.controller('ProductListCtrl', ['$scope', 'Product', function($scope, Product){
+	$scope.products = Product.index();
+	/*$http.get('/products.json').success(function(data){
 		$scope.products = data;
-	});
+	});*/
 }]);
 
 productControllers.controller('ProductDetailCtrl', 
-	['$scope', '$routeParams', '$http', function($scope, $routeParams, $http){
-	$http.get('/products/'+$routeParams.productId+'.json').success(function(data){
-		$scope.product = data;
-	});	
+	['$scope', '$routeParams', 'Product', function($scope, $routeParams, Product){
+	$scope.product = Product.get({id: $routeParams.productId});
 }]);
 
-productControllers.controller('pageController', ['$scope', function($scope){
+productControllers.controller('NewProductCtrl', 
+	['$scope', '$routeParams', '$location', 'Product', function($scope, $routeParams, $location, Product){
+	$scope.product = new Product();
+	
+	$scope.createProduct = function(){
+		new_product = this.product;
+		Product.save(new_product, function(response){			
+			$location.path("/products/"+response.id);
+		});
+	};
 	
 }]);
