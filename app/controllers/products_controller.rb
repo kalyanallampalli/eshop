@@ -18,4 +18,10 @@ class ProductsController < ApplicationController
     respond_with product
   end
   
+  def update
+    product = Product.find(params[:id])
+    product.update_attributes!(params[:product])
+    respond_with product
+  end
+  
 end

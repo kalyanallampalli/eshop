@@ -29,6 +29,19 @@ body{
     font-weight: normal;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
+    
+    #content{
+      min-height:35em;
+      
+      .thumbnail a{
+        width:100%;
+      }
+      
+      .ratings a.pull-right{
+        text-align:right;
+      }
+      
+    }
 }
 
 .container .navbar-header .logo{
@@ -75,5 +88,5 @@ body{
 }
 
 footer {
-  margin: 50px 0;
+  margin: 10px 0;
 }

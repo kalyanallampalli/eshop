@@ -7,24 +7,25 @@ var eShop = angular.module('eShop', [
 eShop.config(['$routeProvider',
 	function($routeProvider){
 		$routeProvider.
-		when('/products', {
-			templateUrl: '/assets/products/product-list.html',
-			controller: 'ProductListCtrl'
-		}).
 		when('/products/new', {
 			templateUrl: '/assets/products/new.html',
 			controller: 'NewProductCtrl'
 		}).
-		when('/', {
+		when('/products/:id/edit', {
+			templateUrl: '/assets/products/edit.html',
+			controller: 'EditProductCtrl'
+		}).
+		when('/products', {
 			templateUrl: '/assets/products/product-list.html',
-			controller: 'ProductListCtrl'	
+			controller: 'ProductListCtrl'
 		}).
 		when('/products/:productId', {
 			templateUrl: '/assets/products/detail-product.html',
 			controller: 'ProductDetailCtrl'
 		}).
 		otherwise({
-			//redirectTo: '/'
+			templateUrl: '/assets/products/product-list.html',
+			controller: 'ProductListCtrl'	
 		});
 	}
 ]);

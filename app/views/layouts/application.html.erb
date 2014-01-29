@@ -13,10 +13,11 @@
 			 	<div class="col-md-3">
 			 		<%= render 'shared/siderbar' %>
 			 	</div>
-			 	<div class="col-md-9" ng-view>
+			 	<div class="col-md-9" id="content" ng-view>
 			 		<%= yield %>	
 			 	</div>
 			</div>
 		</div>
+		<%= render 'shared/footer' %>
 	</body>
 </html>
