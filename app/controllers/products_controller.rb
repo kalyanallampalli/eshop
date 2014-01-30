@@ -3,13 +3,13 @@ class ProductsController < ApplicationController
   respond_to :json, :html
   
   def index
-    products = Product.select('name, price, description, id').order('created_at desc')
-    respond_with products
+    products = Product.active_products                
+    respond_with products.as_json
   end
   
   def show
-    product = Product.find(params[:id])
-    respond_with product
+    product = Product.includes(:reviews).find(params[:id])
+    respond_with product.as_json(include: :reviews)
   end
   
   def create
@@ -22,6 +22,6 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     product.update_attributes!(params[:product])
     respond_with product
-  end
-  
+  end 
+    
 end

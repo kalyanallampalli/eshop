@@ -3,7 +3,9 @@ Eshop::Application.routes.draw do
   get "pages/about"
 
   root to: 'home#index'
-  resources :products
+  resources :products do
+    resources :reviews, only: [:create]
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,6 +1,11 @@
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li><a href="#/products/{{product.id}}">{{product.name}}</a></li>
+	<li class="active">Edit Product</li>
+</ol>
 <h3>Edit - <a href="#/products/{{product.id}}">{{product.name}}</a></h3>
 <div style="padding-top:20px;">
-	<form role="form" ng-controller="EditProductCtrl" ng-submit="updateProduct()">
+	<form role="form" ng-controller="EditProductCtrl" ng-submit="updateProduct()" name="productForm">
 		<div ng-include="'/assets/products/_form.html'"></div>
 		<button type="submit" class="btn btn-default">Update</button>
 	</form>

@@ -1,3 +1,7 @@
+<ol class="breadcrumb">
+	<li><a href="/">Home</a></li>
+	<li class="active">{{product.name}}</li>
+</ol>
 <div class="thumbnail">
     <img alt="" src="http://placehold.it/800x300" class="img-responsive">
     <div class="caption-full">
@@ -9,7 +13,7 @@
     </div>
     <div class="ratings">
     	<a href="#/products/{{product.id}}/edit" class="pull-right">Edit</a>
-        <p class="pull-right">3 reviews</p>
+        <p class="pull-right">{{product.reviews.length}} reviews</p>
         <p>
             <span class="glyphicon glyphicon-star"></span>
             <span class="glyphicon glyphicon-star"></span>
@@ -19,4 +23,19 @@
             4.0 stars
         </p>
     </div>
+</div>
+<div class="well">
+	<h4>Leave a Review</h4>
+	<div class="text-right" ng-include="'/assets/reviews/new.html'"></div>
+	<hr />
+	<div ng-repeat="review in product.reviews">
+		<div class="row">
+			<div class="col-md-12">				
+				<strong>{{review.name}}</strong>
+				<span class="pull-right">{{review.created_at | date:'MMM dd, yyyy HH:mm'}}</span>
+				<p>{{review.description}}</p>
+			</div>
+		</div>
+		<hr />
+	</div>	
 </div>

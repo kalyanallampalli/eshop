@@ -1,0 +1,9 @@
+<form role="form" ng-controller="NewReviewCtrl" ng-submit="createReview()">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Enter your name" ng-model="review.name" required='true'>
+	</div>
+	<div class="form-group">
+		<textarea class="form-control" required="true" ng-model="review.description"></textarea>
+	</div>
+	<button type="submit" class="btn btn-success">Leave a Review</button>
+</form>

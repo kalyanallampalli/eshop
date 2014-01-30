@@ -1,3 +1,7 @@
+/*
+ * @author: Kalyan 
+ */
+
 var eShop = angular.module('eShop', [
 	'ngRoute',
 	'productControllers',
@@ -22,6 +26,15 @@ eShop.config(['$routeProvider',
 		when('/products/:productId', {
 			templateUrl: '/assets/products/detail-product.html',
 			controller: 'ProductDetailCtrl'
+		}).
+		when('/contact', {
+			templateUrl: '/assets/static/contactus.html'
+		}).
+		when('/services', {
+			templateUrl: '/assets/static/services.html'
+		}).
+		when('/about', {
+			templateUrl: '/assets/static/aboutus.html'
 		}).
 		otherwise({
 			templateUrl: '/assets/products/product-list.html',
