@@ -41,7 +41,7 @@ Eshop::Application.configure do
     port: 587,
     domain: 'localhost:3000',
     authentication: :plain,
-    user_name: 'newmediapresents@gmail.com',
-    password: 'mediapresents123'
+    user_name: 'test@yopmail.com',
+    password: 'test123'
   }
 end

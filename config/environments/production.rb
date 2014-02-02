@@ -70,8 +70,8 @@ Eshop::Application.configure do
     port: 587,
     domain: 'ebuy.herokuapp.com',
     authentication: :plain,
-    user_name: 'kalyan.on.rails@gmail.com',
-    password: 't@t@indicom123'
+    user_name: 'test@yopmail.com',
+    password: 'test123'
   }
 
   # Log the query plan for queries taking more than this (works
