@@ -28,7 +28,8 @@ eShop.config(['$routeProvider',
 			controller: 'ProductDetailCtrl'
 		}).
 		when('/contact', {
-			templateUrl: '/assets/static/contactus.html'
+			templateUrl: '/assets/static/contactus.html',
+			controller: 'ContactCtrl'
 		}).
 		when('/services', {
 			templateUrl: '/assets/static/services.html'

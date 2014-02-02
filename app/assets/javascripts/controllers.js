@@ -20,6 +20,21 @@ productControllers.controller('NewReviewCtrl', ['$scope', '$http', function($sco
 	};
 }]);
 
+productControllers.controller('ContactCtrl', ['$scope', '$http', function($scope, $http){
+	$scope.sendContactInfo = function(){
+		var contact = this.contact;
+		console.log(contact);
+		$http({
+			url: '/contact/deliver',
+			method: 'POST',
+			data: contact
+		}).success(function(response){
+			$('form').html(response.message);
+			$scope.contact = null;
+		});
+	}
+}]);
+
 // Controller to get list of products along with review count
 productControllers.controller('ProductListCtrl', ['$scope', 'Product', function($scope, Product){
 	$scope.products = Product.index();	

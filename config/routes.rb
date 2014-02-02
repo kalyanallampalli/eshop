@@ -3,6 +3,7 @@ Eshop::Application.routes.draw do
   get "pages/about"
 
   root to: 'home#index'
+  match 'contact/deliver' => 'pages#contact', via: 'POST'
   resources :products do
     resources :reviews, only: [:create]
   end

@@ -34,4 +34,14 @@ Eshop::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ActionMailer::Base.smtp_settings = {
+    enable_starttls_auto: true,
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'localhost:3000',
+    authentication: :plain,
+    user_name: 'newmediapresents@gmail.com',
+    password: 'mediapresents123'
+  }
 end

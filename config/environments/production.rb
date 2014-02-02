@@ -63,6 +63,16 @@ Eshop::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  config.action_mailer.default_url_options = { :host => 'ebuy.herokuapp.com' }
+  ActionMailer::Base.smtp_settings = {
+    enable_starttls_auto: true,
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'ebuy.herokuapp.com',
+    authentication: :plain,
+    user_name: 'kalyan.on.rails@gmail.com',
+    password: 't@t@indicom123'
+  }
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
