@@ -16,5 +16,9 @@
           %a{href: "#/services"} Services
         %li
           %a{href: "#/contact"} Contact
+        %li
+          = link_to '#/cart', 'ng-show' => "#{@cart.shopping_cart_items.size > 0}" do
+            Cart 
+            %i.glyphicon.glyphicon-shopping-cart  
     / /.navbar-collapse
   / /.container

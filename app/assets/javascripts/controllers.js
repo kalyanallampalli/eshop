@@ -20,10 +20,36 @@ productControllers.controller('NewReviewCtrl', ['$scope', '$http', function($sco
 	};
 }]);
 
+productControllers.controller('CartCtrl', ['$scope', 'Cart', '$location', function($scope, Cart, $location){
+	
+	$scope.removeItem = function(){
+		$scope.citem = this.citem;
+		Cart.destroy({id: this.citem.item_id}, function(){
+			$scope.cart.shopping_cart_items.splice($scope.citem, 1);
+			if($scope.cart.shopping_cart_items.length)
+				$scope.cartExists = false;
+		});
+	}
+	
+	$scope.add_to_cart = function(){
+		$scope.product = this.product;
+		Cart.save($scope.product, function(data){
+			$location.path("/cart");
+		});
+	}
+}]);
+
+productControllers.controller('CartDetailCtrl', ['$scope', 'Cart', '$routeParams', function($scope, Cart, $routeParams){
+	$scope.cart = Cart.get(function(data){
+		$scope.cart = data;
+		$scope.shopping_items = data.shopping_cart_items;
+		$scope.cartExists = data.shopping_cart_items.length > 0;
+	});
+}]);
+
 productControllers.controller('ContactCtrl', ['$scope', '$http', function($scope, $http){
 	$scope.sendContactInfo = function(){
 		var contact = this.contact;
-		console.log(contact);
 		$http({
 			url: '/contact/deliver',
 			method: 'POST',

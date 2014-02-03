@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
   respond_to :json, :html
   
   def index
-    products = Product.active_products                
-    respond_with products.as_json
+    @products = Product.active_products                
+    respond_with @products
   end
   
   def show

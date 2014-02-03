@@ -31,8 +31,13 @@
 	        {{product.description}}
 	      </p>
 	    </div>
+	    <div class="ratings" id="links">
+	    	<a href="#/products/{{product.id}}/edit" class="pull-right">Edit</a>
+	    	<p>
+	    		<a ng-click="add_to_cart()" href="javascript:" ng-controller="CartCtrl">Add to Cart</a>
+	    	</p>
+	    </div>	
 	    <div class="ratings">
-	      <a href="#/products/{{product.id}}/edit" class="pull-right">Edit</a>		
 	      <p class='pull-right'>{{product.review_count}} reviews</p>
 	      <p>
 	        <span class="glyphicon glyphicon-star"></span>

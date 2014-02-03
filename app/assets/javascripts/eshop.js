@@ -37,6 +37,10 @@ eShop.config(['$routeProvider',
 		when('/about', {
 			templateUrl: '/assets/static/aboutus.html'
 		}).
+		when('/cart', {
+			templateUrl: '/assets/cart/show.html',
+			controller: 'CartDetailCtrl'
+		}).
 		otherwise({
 			templateUrl: '/assets/products/product-list.html',
 			controller: 'ProductListCtrl'	

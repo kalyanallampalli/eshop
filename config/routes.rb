@@ -4,6 +4,7 @@ Eshop::Application.routes.draw do
 
   root to: 'home#index'
   match 'contact/deliver' => 'pages#contact', via: 'POST'
+  resource :cart
   resources :products do
     resources :reviews, only: [:create]
   end

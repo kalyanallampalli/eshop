@@ -22,3 +22,4 @@ end
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem "acts_as_shopping_cart", "~> 0.1.6"

@@ -12,7 +12,12 @@
         </p>
     </div>
     <div class="ratings">
-    	<a href="#/products/{{product.id}}/edit" class="pull-right">Edit</a>
+    	<a ng-click="add_to_cart()" href="javascript:" ng-controller="CartCtrl" class="pull-right btn btn-success">Add to Cart</a>
+    	<p>
+    		<a href="#/products/{{product.id}}/edit">Edit</a>
+    	</p>
+    </div>	
+    <div class="ratings">
         <p class="pull-right">{{product.reviews.length}} reviews</p>
         <p>
             <span class="glyphicon glyphicon-star"></span>

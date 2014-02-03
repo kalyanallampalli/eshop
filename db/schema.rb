@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140130072206) do
+ActiveRecord::Schema.define(:version => 20140203065057) do
+
+  create_table "carts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.integer  "quantity"
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.float    "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "products", :force => true do |t|
     t.string   "name"
@@ -22,6 +38,9 @@ ActiveRecord::Schema.define(:version => 20140130072206) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "products", ["id"], :name => "index_products_on_id"
+  add_index "products", ["name"], :name => "index_products_on_name"
+
   create_table "reviews", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -30,5 +49,7 @@ ActiveRecord::Schema.define(:version => 20140130072206) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  add_index "reviews", ["product_id", "id"], :name => "index_reviews_on_product_id_and_id"
 
 end
