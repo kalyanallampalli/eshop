@@ -1,4 +1,3 @@
-# For MySql:
 development: &development
   adapter: postgresql
   database: eshop_development
@@ -19,13 +18,3 @@ test: &test
   host: localhost
   encoding: utf8
   schema_search_path: public
-
-# Kevin says:  This is only for testing production environment locally ...
-# Heroku does not use database.yml.
-production:
-  <<: *development
-qa:
-  <<: *development
-
-cucumber:
-  <<: *test
