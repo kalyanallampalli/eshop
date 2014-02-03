@@ -33,9 +33,13 @@ body{
     #content{
       min-height:35em;
       
-      .caption-full{
-        .table td{font-weight:normal;}
+      .table td{
+        font-weight:normal;
       }
+      .borderless, .borderless td{
+        border: none !important;
+      }
+      
       
       #links p{
         margin:0;

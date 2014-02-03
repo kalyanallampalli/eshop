@@ -29,7 +29,8 @@ class CartsController < ApplicationController
   private
   
   def cart_as_json
-    @cart.as_json(only: [:id], 
+    @cart.as_json(only: [:id],
+                 methods: [:subtotal, :total, :taxes, :discount], 
                  include: {
                    shopping_cart_items: {
                      only: [:id, :item_id, :item_type, :price, :quantity], 

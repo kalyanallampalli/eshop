@@ -3,23 +3,35 @@
 	<li class="active">Cart&nbsp;<i class="glyphicon glyphicon-shopping-cart"></i></li>
 </ol>
 <h3 ng-hide="cartExists">Your Cart is empty</h3>
-<div class="thumbnail" ng-show="cartExists" ng-controller="CartDetailCtrl">
-	<div class="caption-full table-responsive">
-		<table class="table table-hover">
-			<tr class="active">
-				<th>Product Name</th>
-				<th>Qty.</th>
-				<th>Unit Price</th>
-				<th>Total</th>
-				<th class="remove">&nbsp;</th>
-			</tr>
-			<tr ng-repeat="citem in cart.shopping_cart_items">
-				<td><a href="#/products/{{citem.item_id}}">{{citem.item.name}}</a></td>
-				<td>{{citem.quantity}}</td>
-				<td>{{citem.price}}</td>
-				<td>{{citem.price * citem.quantity}}</td>
-				<td><a href="javascript:" ng-click="removeItem()" ng-controller="CartCtrl"><i class="glyphicon glyphicon-trash"></i></a></td>
-			</tr>
-		</table>
-	</div>
+<div class="caption-full table-responsive" ng-show="cartExists" ng-controller="CartDetailCtrl">
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Product Name</th>
+			<th>Qty.</th>
+			<th>Unit Price</th>
+			<th>SubTotal</th>
+			<th class="remove">&nbsp;</th>
+		</tr>
+		<tr ng-repeat="citem in cart.shopping_cart_items">
+			<td><a href="#/products/{{citem.item_id}}">{{citem.item.name}}</a></td>
+			<td>{{citem.quantity}}</td>
+			<td>&#8377;<span>{{citem.price}}</span></td>
+			<td>&#8377;{{citem.price * citem.quantity}}</td>
+			<td><a href="javascript:" ng-click="removeItem()" ng-controller="CartCtrl"><i class="glyphicon glyphicon-trash"></i></a></td>
+		</tr>
+	</table>
+</div>
+<div class="caption-full pull-right table-responsive" ng-show="cartExists" ng-controller="CartDetailCtrl">
+	<table class="table table-condensed borderless">
+		<tr><td>SubTotal:</td><td>&nbsp;</td><td>&#8377;{{cart.subtotal}}</td></tr>
+		<tr><td>Taxes (1%):</td><td>&nbsp;</td><td>&#8377;{{cart.taxes}}</td></tr>
+		<tr><td>Discount:</td><td>&nbsp;</td><td>&#8377;{{cart.discount}}</td></tr>
+		<tr><td>Grand Total:</td><td>&nbsp;</td><td>&#8377;{{cart.total}}</td></tr>
+	</table>
+</div>
+<div style="clear:right;"></div>
+<hr />
+<div class="pull-right">
+	<a href="javascript:" class="btn btn-primary">Checkout</a>
+	<a href="/" class="btn btn-default">Continue Shopping</a>
 </div>
